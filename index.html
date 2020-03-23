@@ -1,0 +1,176 @@
+<html>
+    <head>
+        <title>novacbn/stream-screens :: Home</title>
+        <link rel="stylesheet" href="./extern/styles/chota.css" />
+
+        <style>
+            aside {
+                position: relative;
+
+                padding-bottom: 56.25%;
+
+                width: 100%;
+                height: 0;
+            }
+
+            center {
+                margin-top: 1rem;
+            }
+
+            code {
+                white-space: normal;
+            }
+
+            code[id] {
+                user-select: all;
+            }
+
+            iframe {
+                position: absolute;
+
+                left: 0;
+                top: 0;
+
+                width: 100%;
+                height: 100%;
+
+                border-radius: 4px;
+                background: #fff;
+                -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            }
+        </style>
+
+        <script type="application/javascript" src="./assets/scripts/editor.js"></script>
+        <script type="application/javascript" src="./assets/scripts/screens.js"></script>
+    </head>
+
+    <body>
+        <main class="container">
+            <noscript>
+                <h1>JAVASCRIPT IS REQUIRED FOR EDITING / CUSTOMIZATION!</h1>
+            </noscript>
+
+            <h1><code>novacbn/stream-screens</code> - Stream Screens</h1>
+            <p>Below, you can find Browser-based screens to use in your livestreams as scenes.</p>
+
+            <a id="glitch" href="./~/glitch?subtitle=@novacbn&title=STREAMING SOON!" target="_blank"
+                ><h2>Glitch</h2></a
+            >
+            <aside>
+                <iframe
+                    id="glitch-iframe"
+                    src="./~/glitch?subtitle=@novacbn&title=STREAMING SOON!"
+                ></iframe>
+            </aside>
+
+            <center>
+                <small>
+                    <!-- prettier-ignore -->
+                    <code id="glitch-code">
+                        https://novacbn.github.io/stream-screens/~/glitch?subtitle=@novacbn&title=STREAMING SOON!
+                    </code>
+                </small>
+            </center>
+
+            <h3>Query Parameters</h3>
+            <table>
+                <tr>
+                    <th>Parameter Name</th>
+                    <th>Type</th>
+                    <th>Default Value</th>
+                    <th>Sample Value</th>
+                    <th>Preview's Value</th>
+                </tr>
+
+                <tr>
+                    <td>subtitle</td>
+                    <td><code>String</code></td>
+                    <td><code>N/A</code></td>
+                    <td><code>?subtitle=@novacbn</code></td>
+                    <td><input id="glitch-subtitle" type="text" value="@novacbn" /></td>
+                </tr>
+
+                <tr>
+                    <td>title</td>
+                    <td><code>String</code></td>
+                    <td><code>N/A</code></td>
+                    <td><code>?title=STREAMING SOON!</code></td>
+                    <td><input id="glitch-title" type="text" value="STREAMING SOON!" /></td>
+                </tr>
+
+                <tr>
+                    <td>transparent</td>
+                    <td><code>Boolean</code></td>
+                    <td><code>false</code></td>
+                    <td><code></code></td>
+                    <td><input id="glitch-transparent" type="checkbox" /></td>
+                </tr>
+            </table>
+
+            <script>
+                Editor.make_editor("glitch");
+            </script>
+            <a
+                id="rainbow"
+                href="./~/rainbow?subtitle=@novacbn&title=STREAMING SOON!"
+                target="_blank"
+                ><h2>Rainbow</h2></a
+            >
+            <aside>
+                <iframe
+                    id="rainbow-iframe"
+                    src="./~/rainbow?subtitle=@novacbn&title=STREAMING SOON!"
+                ></iframe>
+            </aside>
+
+            <center>
+                <small>
+                    <!-- prettier-ignore -->
+                    <code id="rainbow-code">
+                        https://novacbn.github.io/stream-screens/~/rainbow?subtitle=@novacbn&title=STREAMING SOON!
+                    </code>
+                </small>
+            </center>
+
+            <h3>Query Parameters</h3>
+            <table>
+                <tr>
+                    <th>Parameter Name</th>
+                    <th>Type</th>
+                    <th>Default Value</th>
+                    <th>Sample Value</th>
+                    <th>Preview's Value</th>
+                </tr>
+
+                <tr>
+                    <td>subtitle</td>
+                    <td><code>String</code></td>
+                    <td><code>N/A</code></td>
+                    <td><code>?subtitle=@novacbn</code></td>
+                    <td><input id="rainbow-subtitle" type="text" value="@novacbn" /></td>
+                </tr>
+
+                <tr>
+                    <td>title</td>
+                    <td><code>String</code></td>
+                    <td><code>N/A</code></td>
+                    <td><code>?title=STREAMING SOON!</code></td>
+                    <td><input id="rainbow-title" type="text" value="STREAMING SOON!" /></td>
+                </tr>
+
+                <tr>
+                    <td>transparent</td>
+                    <td><code>Boolean</code></td>
+                    <td><code>false</code></td>
+                    <td><code></code></td>
+                    <td><input id="rainbow-transparent" type="checkbox" /></td>
+                </tr>
+            </table>
+
+            <script>
+                Editor.make_editor("rainbow");
+            </script>
+        </main>
+    </body>
+</html>

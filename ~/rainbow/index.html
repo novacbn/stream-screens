@@ -1,0 +1,207 @@
+<!--
+    AUTHOR: Mateus Generoso
+    SOURCE: https://codepen.io/mtsgeneroso/pen/mdJRpxX
+-->
+
+<html>
+    <head>
+        <title>novacbn/stream-screens :: Rainbow</title>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Righteous&display=swap" />
+        <link rel="stylesheet" href="../../assets/styles/common.css" />
+
+        <script type="application/javascript" src="../../assets/scripts/screens.js"></script>
+
+        <style>
+            @keyframes rainbow {
+                0%,
+                100% {
+                    transform: translatey(var(--axis-y));
+                }
+
+                50% {
+                    transform: translatey(calc(var(--axis-y) * -1));
+                }
+            }
+
+            :root {
+                --axis-x: 1px;
+                --axis-y: 1rem;
+
+                --color-subtitle: var(--theme-foreground);
+                --color-title-one: var(--color-white);
+                --color-title-two: var(--color-orange);
+                --color-title-three: var(--color-red);
+                --color-title-four: var(--color-violet);
+                --color-title-five: var(--color-blue);
+                --color-title-six: var(--color-green);
+                --color-title-seven: var(--color-yellow);
+
+                --delay: 10;
+                --font-size-title: 8vw;
+                --text-shadow: var(--color-black);
+            }
+
+            html,
+            body {
+                font-family: var(--font-family);
+                font-size: var(--font-size);
+
+                overflow: hidden;
+            }
+
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                flex-direction: column;
+
+                height: 100vh;
+
+                background-color: var(--theme-background);
+            }
+
+            h2,
+            li {
+                text-shadow: -1px -1px 0 var(--text-shadow), 1px -1px 0 var(--text-shadow),
+                    -1px 1px 0 var(--text-shadow), 1px 1px 0 var(--text-shadow),
+                    4px 4px 0 rgba(0, 0, 0, 0.2);
+            }
+
+            h2 {
+                color: var(--color-subtitle);
+                font-weight: 500;
+            }
+
+            ul {
+                display: block;
+
+                position: relative;
+                padding: 0;
+                margin: 0;
+
+                counter-reset: rainbow;
+                list-style: none;
+            }
+
+            li {
+                font-size: var(--font-size-title);
+
+                counter-increment: rainbow;
+                white-space: pre;
+
+                animation: rainbow 1.5s ease-in-out infinite;
+            }
+
+            li:not(:first-child) {
+                position: absolute;
+                top: 0;
+            }
+
+            li:nth-child(1) {
+                left: calc(var(--axis-x) * 1);
+
+                color: var(--color-title-one);
+
+                animation-delay: calc(1 / var(--delay) * 1s);
+                z-index: -10;
+            }
+
+            li:nth-child(2) {
+                left: calc(var(--axis-x) * 2);
+
+                color: var(--color-title-two);
+
+                animation-delay: calc(2 / var(--delay) * 1s);
+                z-index: -20;
+            }
+
+            li:nth-child(3) {
+                left: calc(var(--axis-x) * 3);
+
+                color: var(--color-title-three);
+
+                animation-delay: calc(3 / var(--delay) * 1s);
+                z-index: -30;
+            }
+
+            li:nth-child(4) {
+                left: calc(var(--axis-x) * 4);
+
+                color: var(--color-title-four);
+
+                animation-delay: calc(4 / var(--delay) * 1s);
+                z-index: -40;
+            }
+
+            li:nth-child(5) {
+                left: calc(var(--axis-x) * 5);
+
+                color: var(--color-title-five);
+
+                animation-delay: calc(5 / var(--delay) * 1s);
+                z-index: -50;
+            }
+
+            li:nth-child(6) {
+                left: calc(var(--axis-x) * 6);
+
+                color: var(--color-title-six);
+
+                animation-delay: calc(6 / var(--delay) * 1s);
+                z-index: -60;
+            }
+
+            li:nth-child(7) {
+                left: calc(var(--axis-x) * 7);
+
+                color: var(--color-title-seven);
+
+                animation-delay: calc(7 / var(--delay) * 1s);
+                z-index: -70;
+            }
+        </style>
+    </head>
+
+    <body>
+        <ul>
+            <li>N/A</li>
+            <li>N/A</li>
+            <li>N/A</li>
+            <li>N/A</li>
+            <li>N/A</li>
+            <li>N/A</li>
+            <li>N/A</li>
+        </ul>
+
+        <h2>N/A</h2>
+
+        <script>
+            (() => {
+                let {subtitle = "N/A", title = "N/A", transparent = false} = Screens.get_params([
+                    "subtitle",
+                    "title",
+                    "transparent",
+                ]);
+
+                subtitle = subtitle === true ? "" : subtitle.trim();
+                title = title === true ? "" : title.trim();
+
+                const title_elements = document.querySelectorAll("li");
+                const subtitle_element = document.querySelector("h2");
+
+                for (const element of title_elements) {
+                    element.textContent = title;
+                }
+
+                subtitle_element.textContent = subtitle;
+
+                if (transparent) document.body.style = "--theme-background:transparent;";
+            })();
+        </script>
+    </body>
+</html>

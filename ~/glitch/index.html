@@ -1,0 +1,391 @@
+<!--
+    AUTHOR: Tee Diang
+    SOURCE: https://codepen.io/acupoftee/pen/WNbBxXq
+-->
+
+<html>
+    <head>
+        <title>novacbn/stream-screens :: Glitch</title>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Righteous&display=swap" />
+        <link rel="stylesheet" href="../../assets/styles/common.css" />
+
+        <script type="application/javascript" src="../../assets/scripts/screens.js"></script>
+
+        <style>
+            @keyframes fudge {
+                from {
+                    transform: translate(0px, 0px);
+                }
+                to {
+                    transform: translate(0px, 2%);
+                }
+            }
+
+            @keyframes glitch-1 {
+                1% {
+                    transform: rotateX(10deg) skewX(90deg);
+                }
+                2% {
+                    transform: rotateX(0deg) skewX(0deg);
+                }
+            }
+
+            @keyframes glitch-2 {
+                1% {
+                    transform: rotateX(10deg) skewX(70deg);
+                }
+                2% {
+                    transform: rotateX(0deg) skewX(0deg);
+                }
+            }
+
+            @keyframes noise-1 {
+                3.3333333333% {
+                    clip-path: inset(44px 0 16px 0);
+                }
+                6.6666666667% {
+                    clip-path: inset(45px 0 34px 0);
+                }
+                10% {
+                    clip-path: inset(90px 0 1px 0);
+                }
+                13.3333333333% {
+                    clip-path: inset(1px 0 59px 0);
+                }
+                16.6666666667% {
+                    clip-path: inset(90px 0 7px 0);
+                }
+                20% {
+                    clip-path: inset(35px 0 56px 0);
+                }
+                23.3333333333% {
+                    clip-path: inset(92px 0 6px 0);
+                }
+                26.6666666667% {
+                    clip-path: inset(9px 0 44px 0);
+                }
+                30% {
+                    clip-path: inset(58px 0 29px 0);
+                }
+                33.3333333333% {
+                    clip-path: inset(70px 0 12px 0);
+                }
+                36.6666666667% {
+                    clip-path: inset(60px 0 29px 0);
+                }
+                40% {
+                    clip-path: inset(24px 0 29px 0);
+                }
+                43.3333333333% {
+                    clip-path: inset(32px 0 62px 0);
+                }
+                46.6666666667% {
+                    clip-path: inset(40px 0 13px 0);
+                }
+                50% {
+                    clip-path: inset(16px 0 60px 0);
+                }
+                53.3333333333% {
+                    clip-path: inset(44px 0 55px 0);
+                }
+                56.6666666667% {
+                    clip-path: inset(97px 0 3px 0);
+                }
+                60% {
+                    clip-path: inset(100px 0 1px 0);
+                }
+                63.3333333333% {
+                    clip-path: inset(41px 0 7px 0);
+                }
+                66.6666666667% {
+                    clip-path: inset(44px 0 48px 0);
+                }
+                70% {
+                    clip-path: inset(15px 0 64px 0);
+                }
+                73.3333333333% {
+                    clip-path: inset(82px 0 14px 0);
+                }
+                76.6666666667% {
+                    clip-path: inset(44px 0 44px 0);
+                }
+                80% {
+                    clip-path: inset(89px 0 11px 0);
+                }
+                83.3333333333% {
+                    clip-path: inset(1px 0 4px 0);
+                }
+                86.6666666667% {
+                    clip-path: inset(91px 0 9px 0);
+                }
+                90% {
+                    clip-path: inset(83px 0 12px 0);
+                }
+                93.3333333333% {
+                    clip-path: inset(64px 0 26px 0);
+                }
+                96.6666666667% {
+                    clip-path: inset(98px 0 2px 0);
+                }
+                100% {
+                    clip-path: inset(53px 0 8px 0);
+                }
+            }
+
+            @keyframes noise-2 {
+                0% {
+                    clip-path: inset(91px 0 2px 0);
+                }
+                3.3333333333% {
+                    clip-path: inset(71px 0 30px 0);
+                }
+                6.6666666667% {
+                    clip-path: inset(46px 0 54px 0);
+                }
+                10% {
+                    clip-path: inset(28px 0 20px 0);
+                }
+                13.3333333333% {
+                    clip-path: inset(68px 0 22px 0);
+                }
+                16.6666666667% {
+                    clip-path: inset(84px 0 17px 0);
+                }
+                20% {
+                    clip-path: inset(84px 0 15px 0);
+                }
+                23.3333333333% {
+                    clip-path: inset(72px 0 9px 0);
+                }
+                26.6666666667% {
+                    clip-path: inset(45px 0 55px 0);
+                }
+                30% {
+                    clip-path: inset(48px 0 11px 0);
+                }
+                33.3333333333% {
+                    clip-path: inset(13px 0 51px 0);
+                }
+                36.6666666667% {
+                    clip-path: inset(50px 0 14px 0);
+                }
+                40% {
+                    clip-path: inset(31px 0 57px 0);
+                }
+                43.3333333333% {
+                    clip-path: inset(89px 0 6px 0);
+                }
+                46.6666666667% {
+                    clip-path: inset(3px 0 44px 0);
+                }
+                50% {
+                    clip-path: inset(60px 0 16px 0);
+                }
+                53.3333333333% {
+                    clip-path: inset(4px 0 79px 0);
+                }
+                56.6666666667% {
+                    clip-path: inset(66px 0 7px 0);
+                }
+                60% {
+                    clip-path: inset(56px 0 44px 0);
+                }
+                63.3333333333% {
+                    clip-path: inset(66px 0 18px 0);
+                }
+                66.6666666667% {
+                    clip-path: inset(26px 0 74px 0);
+                }
+                70% {
+                    clip-path: inset(81px 0 7px 0);
+                }
+                73.3333333333% {
+                    clip-path: inset(86px 0 12px 0);
+                }
+                76.6666666667% {
+                    clip-path: inset(90px 0 1px 0);
+                }
+                80% {
+                    clip-path: inset(53px 0 18px 0);
+                }
+                83.3333333333% {
+                    clip-path: inset(71px 0 8px 0);
+                }
+                86.6666666667% {
+                    clip-path: inset(78px 0 3px 0);
+                }
+                90% {
+                    clip-path: inset(14px 0 44px 0);
+                }
+                93.3333333333% {
+                    clip-path: inset(6px 0 81px 0);
+                }
+                96.6666666667% {
+                    clip-path: inset(9px 0 69px 0);
+                }
+                100% {
+                    clip-path: inset(74px 0 16px 0);
+                }
+            }
+
+            :root {
+                --color-title: #dfbfbf;
+                --font-size-title: 9vw;
+                --font-weight-title: 500;
+
+                --color-subtitle: rgba(165, 141, 141, 0.75);
+                --font-family-subtitle: Arial, Helvetica, sans-serif;
+                --font-size-subtitle: 1vw;
+                --font-weight-subtitle: 100;
+
+                --text-shadow-glow: #dfbfbf;
+                --text-shadow-outline-1: magenta;
+                --text-shadow-outline-2: lightgreen;
+            }
+
+            html,
+            body {
+                font-family: var(--font-family);
+                font-size: var(--font-size);
+
+                overflow: hidden;
+            }
+
+            body {
+                background: var(--theme-background);
+                font-style: italic;
+            }
+
+            main {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+
+                transform: translate(-50%, -50%);
+            }
+
+            h1 {
+                position: relative;
+
+                color: var(--color-title);
+                font-size: var(--font-size-title);
+                font-weight: var(--font-weight-title);
+
+                margin: 0;
+
+                animation: glitch-1 5s 5s infinite;
+                white-space: pre;
+            }
+
+            h1::before {
+                content: attr(data-text);
+
+                position: absolute;
+                top: 0;
+                left: -2px;
+
+                background: var(--theme-background);
+                text-shadow: -5px 0 var(--text-shadow-outline-1);
+
+                animation: noise-1 3s linear infinite alternate-reverse, glitch-1 5s 5.05s infinite;
+                overflow: hidden;
+            }
+
+            h1::after {
+                content: attr(data-text);
+
+                position: absolute;
+                top: 0;
+                left: 2px;
+
+                background: var(--theme-background);
+                text-shadow: -5px 0 var(--text-shadow-outline-2);
+
+                animation: noise-2 3s linear infinite alternate-reverse, glitch-1 5s 5s infinite;
+                overflow: hidden;
+            }
+
+            aside {
+                mix-blend-mode: difference;
+                overflow: hidden;
+            }
+
+            aside::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: repeating-linear-gradient(
+                    to bottom,
+                    transparent 0%,
+                    rgba(255, 255, 255, 0.05) 0.5%,
+                    transparent 1%
+                );
+                animation: fudge 7s ease-in-out alternate infinite;
+            }
+
+            h1:last-of-type {
+                position: absolute;
+                top: 0;
+
+                color: transparent;
+                text-shadow: 0 0 1000px var(--text-shadow-glow);
+            }
+
+            h2 {
+                color: var(--color-subtitle);
+                font-family: var(--font-family-subtitle);
+                font-size: var(--font-size-subtitle);
+                font-weight: var(--font-weight-subtitle);
+
+                letter-spacing: 1em;
+                text-align: center;
+                text-transform: uppercase;
+
+                animation: glitch-2 5s 5.02s infinite;
+            }
+        </style>
+    </head>
+
+    <body>
+        <main>
+            <h1 data-text="N/A">N/A</h1>
+            <h1>N/A</h1>
+
+            <h2>N/A</h2>
+        </main>
+
+        <aside></aside>
+
+        <script>
+            (() => {
+                let {subtitle = "N/A", title = "N/A", transparent = false} = Screens.get_params([
+                    "subtitle",
+                    "title",
+                    "transparent",
+                ]);
+
+                subtitle = subtitle === true ? "" : subtitle.trim();
+                title = title === true ? "" : title.trim();
+
+                const title_elements = document.querySelectorAll("h1");
+                const subtitle_element = document.querySelector("h2");
+
+                for (const element of title_elements) {
+                    element.textContent = title;
+                }
+
+                title_elements[0].setAttribute("data-text", title);
+                subtitle_element.textContent = subtitle;
+
+                if (transparent) document.body.style = "--theme-background:transparent;";
+            })();
+        </script>
+    </body>
+</html>

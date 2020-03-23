@@ -1,0 +1,18 @@
+:root {
+    --brand-twitch: #6441a4;
+
+    --color-black: #000;
+    --color-white: #fff;
+    --color-orange: #d49c3d;
+    --color-red: #d14b3d;
+    --color-violet: #cf52eb;
+    --color-blue: #44a3f7;
+    --color-green: #5acb3c;
+    --color-yellow: #debf40;
+
+    --theme-background: var(--brand-twitch);
+    --theme-foreground: var(--color-white);
+
+    --font-family: "Righteous";
+    --font-size: 24px;
+}
